@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropSpot - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="shell">
+        <div class="brand">Drop<span>Spot</span></div>
+        <div class="subtitle">Sign in to access your account.</div>
+
+        <div class="card">
+            <h1>Login</h1>
+
+            <div class="message" id="error-message" style="display: none;"></div>
+
+            <form id="login-form">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="you@example.com">
+
+                <label>Password</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="footer-link">No account yet? <a href="/register">Register</a></div>
+        </div>
+    </div>
+<script src="../js/login.js"></script>
+</body>
+</html>
