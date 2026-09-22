@@ -1,12 +1,24 @@
 :root {
-    --bg: #0a0a0f;
-    --surface: #12121a;
-    --border: #1e1e2e;
-    --accent: #e8ff47;
-    --text: #f0f0f0;
-    --muted: #555577;
-    --error: #ff3366;
+    --bg: #f6f6f3;
+    --surface: #ffffff;
+    --surface-alt: #f1f1ed;
+    --border: #deded8;
+
+    --accent: #e4572e;
+    --accent-dark: #c84722;
+
+    --text: #20231f;
+    --muted: #73776f;
+    --error: #c74343;
+
+    --shadow-sm: 0 2px 8px rgba(25, 30, 25, 0.06);
+    --shadow-md: 0 8px 24px rgba(25, 30, 25, 0.10);
 }
+
+
+/* ─────────────────────────────────────
+   Base
+───────────────────────────────────── */
 
 * {
     box-sizing: border-box;
@@ -16,29 +28,45 @@
 
 body {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 24px;
-    background:
-        radial-gradient(circle at top left, rgba(232, 255, 71, 0.08), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(255, 107, 53, 0.08), transparent 22%),
-        var(--bg);
+
+    background: var(--bg);
+
     color: var(--text);
-    font-family: "Space Mono", monospace;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ─────────────────────────────────────
+   Auth Layout
+───────────────────────────────────── */
 
 .shell {
     width: 100%;
     max-width: 430px;
 }
 
+
+/* ─────────────────────────────────────
+   Branding
+───────────────────────────────────── */
+
 .brand {
     font-family: "Syne", sans-serif;
+
     font-size: 2rem;
     font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 10px;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 8px;
+
     text-align: center;
 }
 
@@ -48,85 +76,342 @@ body {
 
 .subtitle {
     text-align: center;
+
     color: var(--muted);
-    font-size: 0.78rem;
+
+    font-size: 0.82rem;
+
     margin-bottom: 22px;
 }
 
+
+/* ─────────────────────────────────────
+   Card
+───────────────────────────────────── */
+
 .card {
     background: var(--surface);
+
     border: 1px solid var(--border);
+    border-radius: 12px;
+
     padding: 28px;
+
+    box-shadow: var(--shadow-md);
 }
 
 h1 {
     font-family: "Syne", sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 18px;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+
+    margin-bottom: 20px;
 }
+
+
+/* ─────────────────────────────────────
+   Error Message
+───────────────────────────────────── */
 
 .message {
     margin-bottom: 16px;
+
     padding: 10px 12px;
-    border: 1px solid rgba(255, 51, 102, 0.4);
-    background: rgba(255, 51, 102, 0.08);
-    color: #ff9fb8;
-    font-size: 0.72rem;
+
+    border: 1px solid rgba(199, 67, 67, 0.25);
+    border-radius: 7px;
+
+    background: rgba(199, 67, 67, 0.07);
+
+    color: var(--error);
+
+    font-size: 0.78rem;
+
+    line-height: 1.45;
 }
+
+
+/* ─────────────────────────────────────
+   Form
+───────────────────────────────────── */
 
 label {
     display: block;
+
     margin-bottom: 6px;
-    color: var(--muted);
-    font-size: 0.66rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+
+    color: var(--text);
+
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 input {
     width: 100%;
+
     margin-bottom: 16px;
-    padding: 11px 12px;
-    background: var(--bg);
+
+    padding: 10px 12px;
+
+    background: var(--surface);
+
     color: var(--text);
+
     border: 1px solid var(--border);
+    border-radius: 7px;
+
     outline: none;
+
     font-family: inherit;
+    font-size: 0.85rem;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+input::placeholder {
+    color: #a1a49e;
+}
+
+input:hover {
+    border-color: #c9c9c2;
 }
 
 input:focus {
     border-color: var(--accent);
+
+    box-shadow: 0 0 0 3px rgba(228, 87, 46, 0.10);
 }
 
-button,
+
+/* ─────────────────────────────────────
+   Primary Form Button
+───────────────────────────────────── */
+
+form button,
 .button-link {
     display: inline-block;
+
+    width: 100%;
+
     border: 1px solid var(--accent);
+    border-radius: 7px;
+
     background: var(--accent);
-    color: #0a0a0f;
+    color: #ffffff;
+
     padding: 10px 14px;
+
     text-decoration: none;
+
     font-family: inherit;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 0.82rem;
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
 }
+
+form button:hover,
+.button-link:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+form button:active,
+.button-link:active {
+    transform: translateY(1px);
+}
+
+
+/* ─────────────────────────────────────
+   Footer Link
+───────────────────────────────────── */
 
 .footer-link {
     margin-top: 18px;
+
     color: var(--muted);
-    font-size: 0.72rem;
+
+    font-size: 0.78rem;
+
+    text-align: center;
 }
 
 .footer-link a {
     color: var(--accent);
+
     text-decoration: none;
+
+    font-weight: 600;
 }
+
+.footer-link a:hover {
+    color: var(--accent-dark);
+
+    text-decoration: underline;
+}
+
+
+/* ─────────────────────────────────────
+   Account Page
+───────────────────────────────────── */
 
 .home-text {
     color: var(--muted);
+
     margin-bottom: 18px;
+
     font-size: 0.82rem;
+}
+
+
+/* Account content cards */
+
+.card .field-label {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.card #user-email {
+    color: var(--text);
+}
+
+
+/* ─────────────────────────────────────
+   Account Header Buttons
+───────────────────────────────────── */
+
+/*
+   account.html currently has:
+
+   <button id="back-home-btn">Back to Map</button>
+
+   Unlike the map page, this button doesn't have class="btn".
+   Give it the same visual treatment here.
+*/
+
+header #back-home-btn {
+    font-family: inherit;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+header #back-home-btn:hover {
+    background: var(--surface-alt);
+
+    border-color: #c8c8c1;
+}
+
+
+/* ─────────────────────────────────────
+   Account Lists
+───────────────────────────────────── */
+
+.card .spots-list {
+    padding: 0;
+}
+
+.card .spots-list:empty {
+    min-height: 30px;
+}
+
+
+/* ─────────────────────────────────────
+   Responsive
+───────────────────────────────────── */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .brand {
+        font-size: 1.8rem;
+    }
+
+}
+
+
+/* ─────────────────────────────────────
+   Account Page Layout
+───────────────────────────────────── */
+
+.account-page {
+    min-height: 100vh;
+    height: auto;
+
+    display: block;
+
+    padding: 0;
+
+    background: var(--bg);
+}
+
+.account-page header {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-container {
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+}
+
+.account-card {
+    margin-bottom: 24px;
+}
+
+.account-card:last-child {
+    margin-bottom: 0;
+}
+
+.account-page .spots-list {
+    max-height: 400px;
+    overflow-y: auto;
 }

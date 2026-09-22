@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/auth.css">
 </head>
-<body style="height: auto; overflow-y: auto; display: block;">
+<body class="account-page">
 
 <header>
   <div class="logo">Drop<span>Spot</span></div>
@@ -19,26 +19,26 @@
   </div>
 </header>
 
-<div style="max-width: 700px; margin: 30px auto; padding: 0 20px;">
 
-  <div class="card" style="margin-bottom: 24px;">
+<div class="account-container">
+
+  <div class="card account-card">
     <h1>Account</h1>
     <div class="field-label" style="margin-top: 16px;">Email</div>
     <div id="user-email" style="font-size: 0.9rem;"></div>
   </div>
 
-  <div class="card" style="margin-bottom: 24px;">
+  <div class="card account-card">
     <h1>My Spots</h1>
-    <div id="my-spots-list" class="spots-list" style="max-height: none;"></div>
+    <div id="my-spots-list" class="spots-list"></div>
   </div>
 
-  <div class="card">
+  <div class="card account-card">
     <h1>My Comments</h1>
-    <div id="my-comments-list" class="spots-list" style="max-height: none;"></div>
+    <div id="my-comments-list" class="spots-list"></div>
   </div>
 
 </div>
-
 <script src="../js/account.js"></script>
 </body>
 </html>
