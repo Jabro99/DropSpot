@@ -10,7 +10,7 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
   errorEl.style.display = 'none';
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/register`, {
+    const response = await fetch(`api/register`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

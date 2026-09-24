@@ -1,4 +1,3 @@
-const API_BASE_URL = "http://localhost:3000";
 
 document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -9,7 +8,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   errorEl.style.display = 'none';
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/login`, {
+    const response = await fetch(`api/login`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

@@ -3,8 +3,8 @@ const API_BASE_URL = "http://localhost:3000";
 async function loadAccountData() {
   try {
     const [spotsRes, commentsRes] = await Promise.all([
-      fetch(`${API_BASE_URL}/api/me/spots`, { credentials: "include" }),
-      fetch(`${API_BASE_URL}/api/me/comments`, { credentials: "include" }),
+      fetch(`/api/me/spots`, { credentials: "include" }),
+      fetch(`/api/me/comments`, { credentials: "include" }),
     ]);
 
     const spots = await spotsRes.json();
@@ -63,7 +63,7 @@ function escHtml(str) {
 }
 async function loadUserInfo() {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/me`, { credentials: "include" });
+    const response = await fetch(`/api/me`, { credentials: "include" });
     if (!response.ok) {
       window.location.href = "/login";
       return;
@@ -76,7 +76,7 @@ async function loadUserInfo() {
 }
 
 document.getElementById('logout-btn').addEventListener('click', async () => {
-  await fetch(`${API_BASE_URL}/api/logout`, { method: "POST", credentials: "include" });
+  await fetch(`/api/logout`, { method: "POST", credentials: "include" });
   window.location.href = "/login";
 });
 

@@ -123,7 +123,7 @@ function makeYouIcon() {
 }
  // change in future to only dynamically load hotspots in zoom range for performance optimisation
 async function fetchHotspots() {
-  const response = await fetch(`${"http://localhost:3000"}/api/hotspots`)
+  const response = await fetch(`/api/hotspots`)
 
   if (!response.ok) {
     throw new Error("Failed to fetch hotspots");
@@ -204,7 +204,7 @@ function displayHotspots(hotspots) {
 
 
 async function fetchHotspotComments(hotspotId) {
-  const response = await fetch(`http://localhost:3000/api/hotspots/${hotspotId}/comments`);
+  const response = await fetch(`/api/hotspots/${hotspotId}/comments`);
 
   if (!response.ok) {
     throw new Error("Failed to fetch hotspot comments");
@@ -222,7 +222,7 @@ async function fetchNearbySpots(lat, lng) {
     lng: lng
   })
 
-  const response = await fetch(`${"http://localhost:3000"}/api/spots?${params}`)
+  const response = await fetch(`/api/spots?${params}`)
 
   if (!response.ok) {
     throw new Error("Failed to fetch nearby spots");
@@ -404,7 +404,7 @@ async function handleSaveSpot() {
 
 async function saveSpot(title, description, lat, lng) {
   try {
-    const response = await fetch(`${"http://localhost:3000"}/api/spots`, {
+    const response = await fetch(`/api/spots`, {
       method: "POST",
       credentials: "include",
       headers: {
