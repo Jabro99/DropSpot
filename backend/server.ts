@@ -12,7 +12,7 @@ import helmet from "helmet";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { eq, inArray } from "drizzle-orm";
 import { sql } from "drizzle-orm";
-import { spots, hotspots, hotspotComments, users, sessions } from "./schema.ts";
+import { spots, hotspots, hotspotComments, users, sessions } from "./schema.js";
 import type { Request, Response, NextFunction } from "express";
 import { fileURLToPath } from "url";
 
@@ -38,8 +38,10 @@ declare global {
 
 import dotenv from "dotenv";
 dotenv.config({
-    path: path.resolve(__dirname, "../.env")
+    path: path.resolve(__dirname, "../../np.env")
 });
+
+
 
 
 const createSpotSchema = z.object({
