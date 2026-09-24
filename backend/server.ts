@@ -114,19 +114,19 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 
 
 app.get("/home", requirePageAuth, (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/html/home.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/html/home.html"));
 }); 
 
 app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/html/login.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/html/login.html"));
 })
 
 app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/html/register.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/html/register.html"));
 })
 
 app.get("/account", requirePageAuth, (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/html/account.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/html/account.html"));
 })
 
 
