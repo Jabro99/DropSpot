@@ -111,7 +111,9 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "../../frontend")));
 
-
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
 
 app.get("/home", requirePageAuth, (req, res) => {
     res.sendFile(path.join(__dirname, "../../frontend/html/home.html"));
