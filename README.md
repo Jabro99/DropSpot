@@ -1,6 +1,6 @@
 # DropSpot
 
-DropSpot is a location-based web app where users can leave digital spots at real-world locations and discover spots left by other users.
+DropSpot is a location-based virtual geocaching web app where users can leave digital spots at real-world locations and discover spots left by other users.
 
 If several spots are created close together, they are grouped into a hotspot. Spots within a hotspot can then become comments, allowing users to add to the location rather than creating lots of separate markers.
 
