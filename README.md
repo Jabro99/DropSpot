@@ -33,3 +33,46 @@ If several spots are created close together, they are grouped into a hotspot. Sp
 - Zod
 - bcrypt
 - Helmet
+- Express Rate Limit
+
+**Database**
+- PostgreSQL
+- PostGIS
+- Drizzle ORM
+
+**Deployment**
+- Railway
+- Custom domain: dropspot.uk
+
+## Security
+
+I carried out a security review of the application and implemented a number of protections, including:
+
+- bcrypt password hashing
+- Server-side session management
+- HTTP-only and SameSite cookies
+- Zod input validation
+- Parameterised database queries through Drizzle ORM
+- XSS protection through escaping user-generated content
+- Rate limiting on login, registration and API endpoints
+- Helmet security headers and Content Security Policy
+- Authentication and authorisation checks on protected routes
+- Environment variables for database credentials and other configuration
+- Generic error responses to avoid exposing internal server information
+
+## Project Structure
+
+```text
+DropSpot/
+├── backend/
+│   ├── server.ts
+│   └── schema.ts
+├── frontend/
+│   ├── css/
+│   ├── html/
+│   └── js/
+├── scripts/
+│   └── build-config.js
+├── package.json
+├── tsconfig.json
+└── .gitignore
