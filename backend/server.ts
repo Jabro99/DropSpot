@@ -155,7 +155,7 @@ const registerLimiter = rateLimit({
 
 const spotLimiter = rateLimit({
     windowMs: 60*60*1000,
-    limit: 3,
+    limit: 10,
     message: {
         error: "Too many spots created. Please try again later."
     },

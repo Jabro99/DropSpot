@@ -421,6 +421,10 @@ async function saveSpot(title, description, lat, lng) {
     const data = await response.json()
 
     if  (!response.ok) {
+      if (response.status === 429) {
+        throw new Error(data.error || "You've created spots too quickly. Please try again later.")
+      };
+
       throw new Error("Failed to save spot");
     }
 
@@ -428,7 +432,7 @@ async function saveSpot(title, description, lat, lng) {
 
   } catch (error) {
     console.error("Error saving spot:", error);
-    alert("Failed to save spot.");
+    alert(error.message || "Failed to save spot.");
     return null;
   }
 }
