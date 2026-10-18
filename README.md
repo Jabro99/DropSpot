@@ -1,4 +1,4 @@
-# DropSpot 📍
+# DropSpot
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-dropspot.uk-success?style=for-the-badge)](https://dropspot.uk)
 [![Stack](https://img.shields.io/badge/Stack-Node.js_|_Express_|_TypeScript-blue?style=for-the-badge)]()
@@ -8,13 +8,13 @@ DropSpot is a full-stack, location-based web application that lets people leave 
 
 Starting as a hackathon concept, it has evolved into a robust geospatial application. Instead of functioning as a simple map with permanent markers, DropSpot's core mechanic is dynamic: individual contributions (Spots) automatically cluster and transform into shared community locations (Hotspots) when enough activity happens in a single area.
 
-## 🗺️ Core Concepts
+## Core Concepts
 
 1. **Spots:** The basic unit of contribution. A user leaves a title and description at specific geographic coordinates. 
 2. **Hotspots:** When a threshold of spots (currently 5) accumulate within a specific geographic radius within 24 hours, the system automatically aggregates them into a shared Hotspot.
 3. **Hotspot Comments:** Upon Hotspot creation, the original triggering Spots are dissolved and converted into comments on the shared Hotspot. User attribution (creator ID) and original timestamps are strictly preserved.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 DropSpot is built as a conventional full-stack application with a heavy emphasis on geospatial data and secure architecture.
 
@@ -33,7 +33,7 @@ DropSpot is built as a conventional full-stack application with a heavy emphasis
 * **PostgreSQL:** Primary relational database.
 * **PostGIS:** Extension for advanced spatial data types and geographic operations (e.g., dynamic radius clustering).
 
-## 🧠 Technical Highlights
+## Technical Highlights
 
 ### Geospatial Computing
 Unlike applications that treat latitude and longitude as simple Cartesian coordinates, DropSpot uses PostGIS for true geographic proximity searches. Hotspot generation relies on specialized spatial queries:
@@ -60,7 +60,7 @@ DropSpot is deployed live on **Railway** under a custom domain, utilizing a cont
 * Production API requests share the frontend origin (`/api/...`) to prevent CORS friction.
 * Browser-facing configurations (like Carto API keys) are generated dynamically at build time to keep secrets out of version control.
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 To run DropSpot locally, you will need Node.js and a PostgreSQL instance with the PostGIS extension enabled.
 
@@ -94,11 +94,3 @@ To run DropSpot locally, you will need Node.js and a PostgreSQL instance with th
    ```bash
    npm run dev
    ```
-
-## 🚀 Current Status & Roadmap
-
-DropSpot is live and actively maintained. Current core mechanics—account creation, mapping, spot deployment, and hotspot aggregation—are fully functional. 
-
-**Next Steps & Known Issues:**
-* **Hotspot Expiry Logic:** Implementing a backend chron-job or query filter to gracefully expire and hide Hotspots 24 hours after their creation (or last activity).
-* **Database Transactions:** Wrapping the Hotspot creation and Spot-to-Comment conversion process in strict SQL transactions to prevent race conditions and partial conversions during simultaneous requests.
