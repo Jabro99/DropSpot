@@ -4,7 +4,7 @@
 [![Stack](https://img.shields.io/badge/Stack-Node.js_|_Express_|_TypeScript-blue?style=for-the-badge)]()
 [![Database](https://img.shields.io/badge/Database-PostgreSQL_|_PostGIS-336791?style=for-the-badge&logo=postgresql&logoColor=white)]()
 
-DropSpot is a full-stack, location-based web application that lets people leave digital content at real-world locations and discover what others have left behind. 
+DropSpot is a full-stack, location-based virtual geocaching web application that lets people leave digital content at real-world locations and discover what others have left behind. 
 
 Starting as a hackathon concept, it has evolved into a robust geospatial application. Instead of functioning as a simple map with permanent markers, DropSpot's core mechanic is dynamic: individual contributions (Spots) automatically cluster and transform into shared community locations (Hotspots) when enough activity happens in a single area.
 
